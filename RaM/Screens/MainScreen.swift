@@ -9,10 +9,14 @@ import UIKit
 
 class MainScreen: BaseController {
 
+    private let characterListView = CharacterListView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Characters"
+        
+        
     }
 
 
@@ -21,18 +25,25 @@ class MainScreen: BaseController {
 extension MainScreen {
     override func setupViews() {
         super.setupViews()
-        
+        view.addView(characterListView)
         
     }
     
     override func constraintViews() {
         super.constraintViews()
+        
+        NSLayoutConstraint.activate([
+            characterListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            characterListView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            characterListView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            characterListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        
     }
     
     override func configureViews() {
         super.configureViews()
         
-//        view.backgroundColor = Resources.Colors.mainBackground
     }
     
 }

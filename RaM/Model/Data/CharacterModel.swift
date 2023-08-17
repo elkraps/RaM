@@ -10,22 +10,34 @@ import Foundation
 struct Character: Codable {
     let id: Int
     let name: String
-    let status: String
-    let species: String
+    let status: CharacterStatus
+    let species: Species
     let type: String
-    let gender: String
+    let gender: Gender
     let origin: Origin
     let location: CurrentLocation
     let image: String
     let episode: [String]
     let url: String
-    let created: Date
+    let created: String
+}
+
+enum Species: String, Codable {
+    case alien = "Alien"
+    case human = "Human"
+}
+
+enum Gender: String, Codable {
+    case male = "Male"
+    case female = "Female"
+    case genderless = "Genderless"
+    case unknown = "unknown"
 }
 
 enum CharacterStatus: String, Codable {
     case alive = "Alive"
     case dead = "Dead"
-    case unknown = "Unknown"
+    case unknown = "unknown"
 }
 
 struct Origin: Codable {

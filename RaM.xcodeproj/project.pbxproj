@@ -22,6 +22,10 @@
 		CC2428EB2A8D341B00F75A57 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2428EA2A8D341B00F75A57 /* CharacterModel.swift */; };
 		CC2428ED2A8D342400F75A57 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2428EC2A8D342400F75A57 /* LocationModel.swift */; };
 		CC2428EF2A8D342C00F75A57 /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2428EE2A8D342C00F75A57 /* EpisodeModel.swift */; };
+		CC2428F32A8E4EC900F75A57 /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2428F22A8E4EC900F75A57 /* CharacterResponse.swift */; };
+		CC2428F62A8E52A500F75A57 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2428F52A8E52A500F75A57 /* CharacterViewModel.swift */; };
+		CC2428F92A8E52FB00F75A57 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2428F82A8E52FB00F75A57 /* CharacterListView.swift */; };
+		CC2428FB2A8E53C300F75A57 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2428FA2A8E53C300F75A57 /* UIView + ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		CC2428EA2A8D341B00F75A57 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		CC2428EC2A8D342400F75A57 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		CC2428EE2A8D342C00F75A57 /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
+		CC2428F22A8E4EC900F75A57 /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
+		CC2428F52A8E52A500F75A57 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
+		CC2428F82A8E52FB00F75A57 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
+		CC2428FA2A8E53C300F75A57 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,7 @@
 		CC2428C02A8D26C800F75A57 /* RaM */ = {
 			isa = PBXGroup;
 			children = (
+				CC2428F42A8E528F00F75A57 /* ViewModels */,
 				CC2428E92A8D341000F75A57 /* Model */,
 				CC2428E22A8D31F000F75A57 /* ApiService */,
 				CC2428E12A8D2DE800F75A57 /* Screens */,
@@ -108,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				CC2428D82A8D2ACC00F75A57 /* UIColor + ext.swift */,
+				CC2428FA2A8E53C300F75A57 /* UIView + ext.swift */,
 				CC2428DA2A8D2AF800F75A57 /* Resources.swift */,
 			);
 			path = Helpers;
@@ -125,6 +135,7 @@
 		CC2428E12A8D2DE800F75A57 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				CC2428F72A8E52F200F75A57 /* Views */,
 				CC2428C52A8D26C800F75A57 /* MainScreen.swift */,
 			);
 			path = Screens;
@@ -143,11 +154,44 @@
 		CC2428E92A8D341000F75A57 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CC2428F12A8E4EBB00F75A57 /* Response */,
+				CC2428F02A8E4EB600F75A57 /* Data */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CC2428F02A8E4EB600F75A57 /* Data */ = {
+			isa = PBXGroup;
+			children = (
 				CC2428EA2A8D341B00F75A57 /* CharacterModel.swift */,
 				CC2428EC2A8D342400F75A57 /* LocationModel.swift */,
 				CC2428EE2A8D342C00F75A57 /* EpisodeModel.swift */,
 			);
-			path = Model;
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CC2428F12A8E4EBB00F75A57 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				CC2428F22A8E4EC900F75A57 /* CharacterResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		CC2428F42A8E528F00F75A57 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CC2428F52A8E52A500F75A57 /* CharacterViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CC2428F72A8E52F200F75A57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC2428F82A8E52FB00F75A57 /* CharacterListView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,14 +264,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC2428F32A8E4EC900F75A57 /* CharacterResponse.swift in Sources */,
+				CC2428F62A8E52A500F75A57 /* CharacterViewModel.swift in Sources */,
 				CC2428C62A8D26C800F75A57 /* MainScreen.swift in Sources */,
 				CC2428C22A8D26C800F75A57 /* AppDelegate.swift in Sources */,
 				CC2428E02A8D2CC400F75A57 /* BaseController.swift in Sources */,
 				CC2428C42A8D26C800F75A57 /* SceneDelegate.swift in Sources */,
+				CC2428F92A8E52FB00F75A57 /* CharacterListView.swift in Sources */,
 				CC2428ED2A8D342400F75A57 /* LocationModel.swift in Sources */,
 				CC2428EF2A8D342C00F75A57 /* EpisodeModel.swift in Sources */,
 				CC2428EB2A8D341B00F75A57 /* CharacterModel.swift in Sources */,
 				CC2428E82A8D32D400F75A57 /* Endpoint.swift in Sources */,
+				CC2428FB2A8E53C300F75A57 /* UIView + ext.swift in Sources */,
 				CC2428DE2A8D2CBD00F75A57 /* BaseView.swift in Sources */,
 				CC2428E62A8D329700F75A57 /* ApiRequest.swift in Sources */,
 				CC2428DB2A8D2AF800F75A57 /* Resources.swift in Sources */,
