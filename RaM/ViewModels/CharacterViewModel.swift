@@ -7,12 +7,34 @@
 
 import UIKit
 
+protocol CharacterListViewDelegate: AnyObject {
+    func didLoadInitialCharacters()
+}
+
 final class CharacterViewModel: NSObject {
-    func fetchCharacters() {
-        ApiService.shared.makeDataRequest(.listCharacters, expecting: CharacterResponse.self) { result in
+    
+    public weak var delegate: CharacterListViewDelegate?
+    
+    private var characters: [Character] = [] {
+        didSet {
+            for character in characters {
+                let viewModel = CharacterCellViewModel(characterName: character.name, characterImage: URL(string: character.image))
+                cellViewModels.append(viewModel)
+            }
+        }
+    }
+    
+    private var cellViewModels: [CharacterCellViewModel] = []
+    
+    public func fetchCharacters() {
+        ApiService.shared.makeDataRequest(.listCharacters, expecting: CharacterResponse.self) { [weak self] result in
             switch result {
             case .success(let model):
-                print(String(describing: model))
+                let results = model.results
+                self?.characters = results
+                DispatchQueue.main.async {
+                    self?.delegate?.didLoadInitialCharacters()
+                }  
             case .failure(let error):
                 print(String(describing: error))
             }
@@ -22,12 +44,13 @@ final class CharacterViewModel: NSObject {
 
 extension CharacterViewModel: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return cellViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .systemMint
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.cellId, for: indexPath) as? CharacterCollectionViewCell else { fatalError("Unsupported cell")}
+        let viewModel = cellViewModels[indexPath.row]
+        cell.configure(with: viewModel)
         return cell
     }
     

@@ -24,12 +24,12 @@ final class CharacterListView: BaseView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.isHidden = true
         collectionView.alpha = 0
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(CharacterCollectionViewCell.self, forCellWithReuseIdentifier: CharacterCollectionViewCell.cellId)
         return collectionView
     }()
 }
 
-extension CharacterListView {
+extension CharacterListView: CharacterListViewDelegate {
     
     override func setupViews() {
         super.setupViews()
@@ -38,6 +38,7 @@ extension CharacterListView {
         addView(collectionView)
         
         spinner.startAnimating()
+        viewModel.delegate = self
         viewModel.fetchCharacters()
         
         setupCollectionView()
@@ -67,15 +68,22 @@ extension CharacterListView {
     private func setupCollectionView() {
         collectionView.dataSource = viewModel
         collectionView.delegate = viewModel
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
-            self.spinner.stopAnimating()
-            
-            self.collectionView.isHidden = false
-            
-            UIView.animate(withDuration: 0.4) {
-                self.collectionView.alpha = 1
-            }
-        })
     }
+    
+    func didLoadInitialCharacters() {
+        spinner.stopAnimating()
+        collectionView.isHidden = false
+        collectionView.reloadData()
+        UIView.animate(withDuration: 0.4) {
+            self.collectionView.alpha = 1
+        }
+//        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+//            self.
+//            
+//            self.
+//            
+//            
+//        })
+    }
+    
 }
