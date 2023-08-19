@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol CharactersListViewDelegate: AnyObject {
+    func characterListVieww(_ characterListView: CharacterListView, didSelectCharacter character: Character)
+}
+
 final class CharacterListView: BaseView {
+    
+    public weak var delegate: CharactersListViewDelegate?
     
     private let viewModel = CharacterViewModel()
     
@@ -20,7 +26,7 @@ final class CharacterListView: BaseView {
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.isHidden = true
         collectionView.alpha = 0
@@ -79,11 +85,15 @@ extension CharacterListView: CharacterListViewDelegate {
         }
 //        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
 //            self.
-//            
+//
 //            self.
-//            
-//            
+//
+//
 //        })
+    }
+    
+    func didSelectCharacter(_ character: Character) {
+        delegate?.characterListVieww(self, didSelectCharacter: character)
     }
     
 }

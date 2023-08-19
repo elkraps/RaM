@@ -14,7 +14,7 @@ class MainScreen: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Characters"
+        
         
         
     }
@@ -22,11 +22,12 @@ class MainScreen: BaseController {
 
 }
 
-extension MainScreen {
+extension MainScreen: CharactersListViewDelegate {
+    
     override func setupViews() {
         super.setupViews()
         view.addView(characterListView)
-        
+        characterListView.delegate = self
     }
     
     override func constraintViews() {
@@ -46,5 +47,12 @@ extension MainScreen {
         
     }
     
+    func characterListVieww(_ characterListView: CharacterListView, didSelectCharacter character: Character) {
+        let viewModel = DetailViewModel(character: character)
+        let detailScreen = DetailScreen(viewModel: viewModel)
+        detailScreen.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(detailScreen, animated: true)
+        
+    }
 }
 
