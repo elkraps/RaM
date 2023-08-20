@@ -18,10 +18,6 @@ class BaseController: UIViewController {
     }
 }
 
-enum NavBarPosition {
-    case left
-    case right
-}
 
 @objc extension BaseController {
     
@@ -35,15 +31,8 @@ enum NavBarPosition {
     
     func configureViews() {
         
-        view.backgroundColor = Resources.Colors.mainBackground
-    }
-    
-    func navBarLeftButtonHandler() {
-        print("NavBar left button tapped")
-    }
-
-    func navBarRightButtonHandler() {
-        print("NavBar right button tapped")
+//        view.backgroundColor = Resources.Colors.mainBackground
+        view.backgroundColor = .white
     }
 }
 

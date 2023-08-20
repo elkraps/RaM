@@ -57,4 +57,5 @@ final class ApiRequest {
 
 extension ApiRequest {
     static let listCharacters = ApiRequest(endPoint: .character)
+    static let listEpisodes = ApiRequest(endPoint: .episode)
 }

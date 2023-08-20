@@ -28,10 +28,12 @@ final class CharacterListView: BaseView {
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.contentInsetAdjustmentBehavior = .never
+        collectionView.backgroundColor = .clear
         collectionView.isHidden = true
         collectionView.alpha = 0
         collectionView.register(CharacterCollectionViewCell.self, forCellWithReuseIdentifier: CharacterCollectionViewCell.cellId)
-        return collectionView
+                return collectionView
     }()
 }
 

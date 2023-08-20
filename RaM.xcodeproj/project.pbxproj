@@ -28,9 +28,12 @@
 		CC2428FB2A8E53C300F75A57 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2428FA2A8E53C300F75A57 /* UIView + ext.swift */; };
 		CC2428FD2A8E7EB600F75A57 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2428FC2A8E7EB600F75A57 /* CharacterCollectionViewCell.swift */; };
 		CC2428FF2A8E806400F75A57 /* CharacterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2428FE2A8E806400F75A57 /* CharacterCellViewModel.swift */; };
-		CC2429012A90915900F75A57 /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2429002A90915900F75A57 /* DetailScreen.swift */; };
 		CC2429032A90921000F75A57 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2429022A90921000F75A57 /* DetailViewModel.swift */; };
 		CC2429052A90949800F75A57 /* RootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2429042A90949800F75A57 /* RootScreen.swift */; };
+		CC2429072A90FBE400F75A57 /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2429062A90FBE400F75A57 /* DetailScreen.swift */; };
+		CC2429092A91DF0700F75A57 /* LoadIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2429082A91DF0700F75A57 /* LoadIndicator.swift */; };
+		CC24290B2A91E68400F75A57 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24290A2A91E68400F75A57 /* CharacterDetailViewModel.swift */; };
+		CC24290D2A92531900F75A57 /* EpisodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24290C2A92531900F75A57 /* EpisodeResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,9 +60,12 @@
 		CC2428FA2A8E53C300F75A57 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		CC2428FC2A8E7EB600F75A57 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC2428FE2A8E806400F75A57 /* CharacterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellViewModel.swift; sourceTree = "<group>"; };
-		CC2429002A90915900F75A57 /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
 		CC2429022A90921000F75A57 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		CC2429042A90949800F75A57 /* RootScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreen.swift; sourceTree = "<group>"; };
+		CC2429062A90FBE400F75A57 /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
+		CC2429082A91DF0700F75A57 /* LoadIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadIndicator.swift; sourceTree = "<group>"; };
+		CC24290A2A91E68400F75A57 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
+		CC24290C2A92531900F75A57 /* EpisodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +153,7 @@
 			children = (
 				CC2428F72A8E52F200F75A57 /* Views */,
 				CC2428C52A8D26C800F75A57 /* MainScreen.swift */,
-				CC2429002A90915900F75A57 /* DetailScreen.swift */,
+				CC2429062A90FBE400F75A57 /* DetailScreen.swift */,
 				CC2429042A90949800F75A57 /* RootScreen.swift */,
 			);
 			path = Screens;
@@ -186,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				CC2428F22A8E4EC900F75A57 /* CharacterResponse.swift */,
+				CC24290C2A92531900F75A57 /* EpisodeResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -196,6 +203,7 @@
 				CC2428F52A8E52A500F75A57 /* CharacterViewModel.swift */,
 				CC2428FE2A8E806400F75A57 /* CharacterCellViewModel.swift */,
 				CC2429022A90921000F75A57 /* DetailViewModel.swift */,
+				CC24290A2A91E68400F75A57 /* CharacterDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -205,6 +213,7 @@
 			children = (
 				CC2428F82A8E52FB00F75A57 /* CharacterListView.swift */,
 				CC2428FC2A8E7EB600F75A57 /* CharacterCollectionViewCell.swift */,
+				CC2429082A91DF0700F75A57 /* LoadIndicator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,12 +288,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC2429012A90915900F75A57 /* DetailScreen.swift in Sources */,
+				CC24290D2A92531900F75A57 /* EpisodeResponse.swift in Sources */,
 				CC2428F32A8E4EC900F75A57 /* CharacterResponse.swift in Sources */,
 				CC2428FF2A8E806400F75A57 /* CharacterCellViewModel.swift in Sources */,
+				CC2429092A91DF0700F75A57 /* LoadIndicator.swift in Sources */,
 				CC2428F62A8E52A500F75A57 /* CharacterViewModel.swift in Sources */,
 				CC2428C62A8D26C800F75A57 /* MainScreen.swift in Sources */,
 				CC2428C22A8D26C800F75A57 /* AppDelegate.swift in Sources */,
+				CC24290B2A91E68400F75A57 /* CharacterDetailViewModel.swift in Sources */,
 				CC2428E02A8D2CC400F75A57 /* BaseController.swift in Sources */,
 				CC2428C42A8D26C800F75A57 /* SceneDelegate.swift in Sources */,
 				CC2428F92A8E52FB00F75A57 /* CharacterListView.swift in Sources */,
@@ -295,6 +306,7 @@
 				CC2429052A90949800F75A57 /* RootScreen.swift in Sources */,
 				CC2428FB2A8E53C300F75A57 /* UIView + ext.swift in Sources */,
 				CC2428FD2A8E7EB600F75A57 /* CharacterCollectionViewCell.swift in Sources */,
+				CC2429072A90FBE400F75A57 /* DetailScreen.swift in Sources */,
 				CC2428DE2A8D2CBD00F75A57 /* BaseView.swift in Sources */,
 				CC2429032A90921000F75A57 /* DetailViewModel.swift in Sources */,
 				CC2428E62A8D329700F75A57 /* ApiRequest.swift in Sources */,

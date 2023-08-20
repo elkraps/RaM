@@ -20,7 +20,8 @@ final class CharacterCollectionViewCell: UICollectionViewCell {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .bold)
+        label.font = .systemFont(ofSize: 15, weight: .bold)
+        label.numberOfLines = 0 
         label.textColor = Resources.Colors.mainFontColor
         return label
     }()

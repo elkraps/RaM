@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Character: Codable {
     let id: Int
@@ -45,6 +46,17 @@ enum CharacterStatus: String, Codable {
             return rawValue
         case .unknown:
             return "Unknown"
+        }
+    }
+    
+    var color: Color {
+        switch self {
+        case .alive:
+            return Color(Resources.Colors.greenFontColor)
+        case .dead:
+            return Color.red
+        case .unknown:
+            return Color.gray
         }
     }
 }

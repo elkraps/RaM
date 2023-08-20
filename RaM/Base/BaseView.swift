@@ -28,7 +28,5 @@ class BaseView: UIView {
 @objc extension BaseView {
     func setupViews() {}
     func constraintViews() {}
-    func configureViews() {
-        backgroundColor = .red
-    }
+    func configureViews() {}
 }

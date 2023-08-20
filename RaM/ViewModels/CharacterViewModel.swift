@@ -16,6 +16,8 @@ final class CharacterViewModel: NSObject {
     
     public weak var delegate: CharacterListViewDelegate?
     
+    private var isLoadMoreCharacters = false
+    
     private var characters: [Character] = [] {
         didSet {
             for character in characters {
@@ -47,7 +49,7 @@ final class CharacterViewModel: NSObject {
     }
     
     public func fetchAdditionalCharacters() {
-        
+        isLoadMoreCharacters = true
     }
     
     public var loadIndicator: Bool {
@@ -78,12 +80,36 @@ extension CharacterViewModel: UICollectionViewDataSource, UICollectionViewDelega
         let character = characters[indexPath.row]
         delegate?.didSelectCharacter(character)
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        guard kind == UICollectionView.elementKindSectionFooter,
+//              let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LoadIndicator.id, for: indexPath) as? LoadIndicator else {
+//            fatalError("Errrorr")
+//        }
+//        footer.startAnimating()
+//        return footer
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+//        guard loadIndicator else {
+//            return .zero
+//        }
+//        return CGSize(width: collectionView.frame.width, height: 100)
+//    }
 }
 
 extension CharacterViewModel: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard loadIndicator else {
+        guard loadIndicator, !isLoadMoreCharacters else {
             return
+        }
+        let offset = scrollView.contentOffset.y
+        let totalContentHeight = scrollView.contentSize.height
+        let totalScrollViewHeight = scrollView.frame.size.height
+        
+        if offset >= (totalContentHeight - totalScrollViewHeight - 120) {
+            fetchAdditionalCharacters()
+            
         }
     }
 }
