@@ -10,12 +10,22 @@ import SwiftUI
 
 class MainScreen: BaseController{
 
+    
+    private let charText: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 28, weight: .bold)
+        label.textColor = .white
+        return label
+    }()
+    
     private let characterListView = CharacterListView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Characters"
+//        title = "CHARACTERS"
+        
     }
 
 
@@ -26,6 +36,7 @@ extension MainScreen: CharactersListViewDelegate {
     override func setupViews() {
         super.setupViews()
         view.addView(characterListView)
+        view.addView(charText)
         characterListView.delegate = self
     }
     
@@ -33,10 +44,15 @@ extension MainScreen: CharactersListViewDelegate {
         super.constraintViews()
         
         NSLayoutConstraint.activate([
-            characterListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            
+            charText.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            charText.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
+            
+            characterListView.topAnchor.constraint(equalTo: charText.bottomAnchor, constant: 31),
             characterListView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             characterListView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             characterListView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            
         ])
         
     }
@@ -51,10 +67,13 @@ extension MainScreen: CharactersListViewDelegate {
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.barTintColor = .darkGray
         navigationController?.navigationBar.backgroundColor = .clear
-//        navigationController?.navigationBar.layer.opacity = 0.3
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        navigationController?.navigationBar.shadowImage = UIImage()
-//        navigationController?.navigationBar.isTranslucent = true
+
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        charText.text = "Characters"
+        
+        
+        view.backgroundColor = Resources.Colors.mainBackground
     }
     
     func characterListVieww(_ characterListView: CharacterListView, didSelectCharacter character: Character) {

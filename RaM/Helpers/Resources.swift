@@ -17,5 +17,18 @@ enum Resources {
         static let secondFontColor = UIColor(hexString: "#C4C9CE")
         static let greenFontColor = UIColor(hexString: "#47C60B")
         
+        static let planetCell = UIColor(hexString: "191C2A")
+    }
+    
+    enum Images {
+        enum Splash {
+            static let logo = UIImage(named: "logo")
+            static let hole = UIImage(named: "hole")
+            static let stars = UIImage(named: "stars")
+        }
+        
+        enum Detail {
+            static let planet = UIImage(named: "planet")
+        }
     }
 }

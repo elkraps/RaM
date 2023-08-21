@@ -49,4 +49,23 @@ final class ApiService {
         return request
     }
     
+    public func getEpisodesForCharacter<T: Codable>(characterURL: String?, expecting type: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
+        if let url = characterURL {
+            guard let url = URL(string: url) else { return }
+            
+            let task = URLSession.shared.dataTask(with: url) { data, _, error in
+                guard let data = data, error == nil else { return }
+                
+                do {
+                    let episode = try JSONDecoder().decode(type.self, from: data)
+                    completion(.success(episode))
+                }
+                catch {
+                    completion(.failure(error))
+                }
+            }
+            
+            task.resume()
+        }
+    }
 }

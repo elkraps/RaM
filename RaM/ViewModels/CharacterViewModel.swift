@@ -106,10 +106,10 @@ extension CharacterViewModel: UIScrollViewDelegate {
         let offset = scrollView.contentOffset.y
         let totalContentHeight = scrollView.contentSize.height
         let totalScrollViewHeight = scrollView.frame.size.height
-        
+
         if offset >= (totalContentHeight - totalScrollViewHeight - 120) {
             fetchAdditionalCharacters()
-            
+
         }
     }
 }
