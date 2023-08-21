@@ -33,9 +33,9 @@
 		CC2429092A91DF0700F75A57 /* LoadIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2429082A91DF0700F75A57 /* LoadIndicator.swift */; };
 		CC24290B2A91E68400F75A57 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24290A2A91E68400F75A57 /* CharacterDetailViewModel.swift */; };
 		CC24290D2A92531900F75A57 /* EpisodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24290C2A92531900F75A57 /* EpisodeResponse.swift */; };
-		CC2429112A9356F100F75A57 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2429102A9356F100F75A57 /* LaunchScreen.swift */; };
-		CC2429132A935F0300F75A57 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2429122A935F0300F75A57 /* SplashViewModel.swift */; };
-		CC2429152A93605D00F75A57 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2429142A93605D00F75A57 /* SplashPresenter.swift */; };
+		CC24291A2A93DA7F00F75A57 /* record.mov in Resources */ = {isa = PBXBuildFile; fileRef = CC2429192A93DA7F00F75A57 /* record.mov */; };
+		CC24291D2A93DAF000F75A57 /* screen1.png in Resources */ = {isa = PBXBuildFile; fileRef = CC24291B2A93DAF000F75A57 /* screen1.png */; };
+		CC24291E2A93DAF000F75A57 /* screen.png in Resources */ = {isa = PBXBuildFile; fileRef = CC24291C2A93DAF000F75A57 /* screen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,9 +67,9 @@
 		CC2429082A91DF0700F75A57 /* LoadIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadIndicator.swift; sourceTree = "<group>"; };
 		CC24290A2A91E68400F75A57 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		CC24290C2A92531900F75A57 /* EpisodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeResponse.swift; sourceTree = "<group>"; };
-		CC2429102A9356F100F75A57 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
-		CC2429122A935F0300F75A57 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
-		CC2429142A93605D00F75A57 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		CC2429192A93DA7F00F75A57 /* record.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = record.mov; sourceTree = "<group>"; };
+		CC24291B2A93DAF000F75A57 /* screen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen1.png; sourceTree = "<group>"; };
+		CC24291C2A93DAF000F75A57 /* screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +102,7 @@
 		CC2428C02A8D26C800F75A57 /* RaM */ = {
 			isa = PBXGroup;
 			children = (
+				CC2429182A93DA3F00F75A57 /* Example */,
 				CC2428F42A8E528F00F75A57 /* ViewModels */,
 				CC2428E92A8D341000F75A57 /* Model */,
 				CC2428E22A8D31F000F75A57 /* ApiService */,
@@ -157,7 +158,6 @@
 			children = (
 				CC2428F72A8E52F200F75A57 /* Views */,
 				CC2428C52A8D26C800F75A57 /* MainScreen.swift */,
-				CC2429102A9356F100F75A57 /* LaunchScreen.swift */,
 				CC2429062A90FBE400F75A57 /* DetailScreen.swift */,
 				CC2429042A90949800F75A57 /* RootScreen.swift */,
 			);
@@ -208,8 +208,6 @@
 				CC2428F52A8E52A500F75A57 /* CharacterViewModel.swift */,
 				CC2428FE2A8E806400F75A57 /* CharacterCellViewModel.swift */,
 				CC24290A2A91E68400F75A57 /* CharacterDetailViewModel.swift */,
-				CC2429122A935F0300F75A57 /* SplashViewModel.swift */,
-				CC2429142A93605D00F75A57 /* SplashPresenter.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -222,6 +220,16 @@
 				CC2429082A91DF0700F75A57 /* LoadIndicator.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CC2429182A93DA3F00F75A57 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				CC2429192A93DA7F00F75A57 /* record.mov */,
+				CC24291C2A93DAF000F75A57 /* screen.png */,
+				CC24291B2A93DAF000F75A57 /* screen1.png */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,7 +291,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC2428CE2A8D26C900F75A57 /* LaunchScreen.storyboard in Resources */,
+				CC24291E2A93DAF000F75A57 /* screen.png in Resources */,
 				CC2428CB2A8D26C900F75A57 /* Assets.xcassets in Resources */,
+				CC24291A2A93DA7F00F75A57 /* record.mov in Resources */,
+				CC24291D2A93DAF000F75A57 /* screen1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +305,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC2429112A9356F100F75A57 /* LaunchScreen.swift in Sources */,
 				CC24290D2A92531900F75A57 /* EpisodeResponse.swift in Sources */,
 				CC2428F32A8E4EC900F75A57 /* CharacterResponse.swift in Sources */,
 				CC2428FF2A8E806400F75A57 /* CharacterCellViewModel.swift in Sources */,
@@ -302,7 +312,6 @@
 				CC2428F62A8E52A500F75A57 /* CharacterViewModel.swift in Sources */,
 				CC2428C62A8D26C800F75A57 /* MainScreen.swift in Sources */,
 				CC2428C22A8D26C800F75A57 /* AppDelegate.swift in Sources */,
-				CC2429152A93605D00F75A57 /* SplashPresenter.swift in Sources */,
 				CC24290B2A91E68400F75A57 /* CharacterDetailViewModel.swift in Sources */,
 				CC2428E02A8D2CC400F75A57 /* BaseController.swift in Sources */,
 				CC2428C42A8D26C800F75A57 /* SceneDelegate.swift in Sources */,
@@ -316,7 +325,6 @@
 				CC2428FD2A8E7EB600F75A57 /* CharacterCollectionViewCell.swift in Sources */,
 				CC2429072A90FBE400F75A57 /* DetailScreen.swift in Sources */,
 				CC2428DE2A8D2CBD00F75A57 /* BaseView.swift in Sources */,
-				CC2429132A935F0300F75A57 /* SplashViewModel.swift in Sources */,
 				CC2428E62A8D329700F75A57 /* ApiRequest.swift in Sources */,
 				CC2428DB2A8D2AF800F75A57 /* Resources.swift in Sources */,
 				CC2428E42A8D31FC00F75A57 /* ApiService.swift in Sources */,

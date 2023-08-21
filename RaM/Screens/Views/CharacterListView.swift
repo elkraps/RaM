@@ -85,13 +85,6 @@ extension CharacterListView: CharacterListViewDelegate {
         UIView.animate(withDuration: 0.4) {
             self.collectionView.alpha = 1
         }
-//        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
-//            self.
-//
-//            self.
-//
-//
-//        })
     }
     
     func didSelectCharacter(_ character: Character) {

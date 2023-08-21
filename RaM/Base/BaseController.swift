@@ -21,17 +21,11 @@ class BaseController: UIViewController {
 
 @objc extension BaseController {
     
-    func setupViews() {
-        
-    }
+    func setupViews() {}
     
-    func constraintViews() {
-        
-    }
+    func constraintViews() {}
     
     func configureViews() {
-        
-//        view.backgroundColor = Resources.Colors.mainBackground
         view.backgroundColor = .white
     }
 }

@@ -71,11 +71,6 @@ private extension CharacterCollectionViewCell {
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             imageView.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -16),
-            
-//            imageView.heightAnchor.constraint(equalToConstant: 140),
-//            imageView.widthAnchor.constraint(equalToConstant: 140)
-            
-            
         ])
     }
     
